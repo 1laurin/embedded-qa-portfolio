@@ -3,44 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Laurin’s Embedded Software Testing Portfolio</title>
+  <title>Laurin’s Embedded Testing Portfolio</title>
   <style>
     :root {
-      --bg: #1e1e1e;
-      --text: #f5f5f5;
-      --accent: #4fd1c5;
-      --card-bg: #2c2c2c;
-      --card-border: #3c3c3c;
+      --bg: #121212;
+      --text: #e0e0e0;
+      --accent: #00ffe0;
+      --card-bg: #1f1f1f;
+      --card-border: #2a2a2a;
       --link-hover: #00ffff;
     }
 
     body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
     }
 
-    h1 {
-      font-size: 2.75rem;
-      margin-bottom: 0.25rem;
+    header {
+      position: sticky;
+      top: 0;
+      background: #0f0f0f;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--card-border);
+      z-index: 1000;
     }
 
-    p.subtitle {
-      font-size: 1.1rem;
-      color: #aaa;
-      margin-bottom: 1.5rem;
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
     }
 
-    a {
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      margin-right: 1.5rem;
       color: var(--accent);
       text-decoration: none;
+      font-weight: 500;
     }
 
-    a:hover {
+    nav a:hover {
       color: var(--link-hover);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #aaa;
     }
 
     .project {
@@ -57,59 +85,80 @@
       box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.1);
     }
 
-    h2 {
+    .project h2 {
       margin-top: 0;
     }
 
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+    }
+
     footer {
-      margin-top: 3rem;
+      margin-top: 4rem;
       font-size: 0.9rem;
-      color: #777;
+      color: #666;
       text-align: center;
+      padding-bottom: 2rem;
     }
   </style>
 </head>
 <body>
-  <h1>🛠 Laurin’s Embedded Testing Portfolio</h1>
-  <p class="subtitle">
-    Test Engineer | Rice MCS ‘26 | Cleveland-based<br>
-    <a href="https://github.com/1laurin" target="_blank">GitHub</a> |
-    <a href="https://linkedin.com/in/laurin-brittain" target="_blank">LinkedIn</a>
-  </p>
+  <header>
+    <h1>🛠 Laurin Brittain</h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="https://github.com/1laurin" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/laurin-brittain" target="_blank">LinkedIn</a>
+    </nav>
+  </header>
 
-  <div class="project">
-    <h2>🧪 CAN Bus Analyzer</h2>
-    <p>Python tool to parse and visualize CAN messages from embedded booth systems.</p>
-    <p><a href="https://github.com/1laurin/embedded-qa-portfolio/tree/main/projects/can-analyzer">View Code →</a></p>
+  <div class="container">
+    <section class="hero">
+      <h2>Embedded Software Testing Portfolio</h2>
+      <p>Test Engineer @ Sunless Inc. | MCS @ Rice University ’26 | Cleveland, OH</p>
+      <p>Specializing in embedded systems QA, protocol validation, and simulation-based testing.</p>
+    </section>
+
+    <section id="projects">
+      <div class="project">
+        <h2>🧪 CAN Bus Analyzer</h2>
+        <p>Python tool to parse and visualize CAN messages from embedded booth systems.</p>
+        <p><a href="https://github.com/1laurin/embedded-qa-portfolio/tree/main/projects/can-bus-analyzer">View Code →</a></p>
+      </div>
+
+      <div class="project">
+        <h2>💧 Pump Calibration Validator</h2>
+        <p>Compares booth pump cycle outputs against defined thresholds, simulating MIL tests.</p>
+        <p><a href="https://github.com/1laurin/embedded-qa-portfolio/tree/main/projects/pump-calibration-validator">View Code →</a></p>
+      </div>
+
+      <div class="project">
+        <h2>📡 Booth State Logger</h2>
+        <p>Logs booth operation states into structured formats (JSON/MQTT) for IoT-style validation.</p>
+        <p><a href="https://github.com/1laurin/embedded-qa-portfolio/tree/main/projects/booth-state-logger">View Code →</a></p>
+      </div>
+
+      <div class="project">
+        <h2>📶 Embedded Protocol Decoder</h2>
+        <p>Reverse-engineers booth communication over TCP/IP using Wireshark and Python. Focuses on decoding MQTT/gRPC data structures for QA verification.</p>
+        <p><a href="https://github.com/1laurin/embedded-qa-portfolio/tree/main/projects/protocol-decoder">View Code →</a></p>
+      </div>
+
+      <div class="project">
+        <h2>🧰 HIL Simulation Environment</h2>
+        <p>A mock Hardware-In-the-Loop test system for simulating booth inputs and outputs. Includes state transitions, sensor emulation, and test scenario execution.</p>
+        <p><a href="https://github.com/1laurin/embedded-qa-portfolio/tree/main/projects/mock-booth-simulator">View Code →</a></p>
+      </div>
+    </section>
+
+    <footer>
+      Made with ☕, systems, and sarcastic commit messages — Laurin Brittain
+    </footer>
   </div>
-
-  <div class="project">
-    <h2>💧 Pump Calibration Validator</h2>
-    <p>Compares booth pump cycle outputs against defined thresholds, simulating MIL tests.</p>
-    <p><a href="https://github.com/1laurin/embedded-qa-portfolio/tree/main/projects/pump-validator">View Code →</a></p>
-  </div>
-
-  <div class="project">
-    <h2>📡 Booth State Logger</h2>
-    <p>Logs booth operation states into structured formats (JSON/MQTT) for IoT-style validation.</p>
-    <p><a href="https://github.com/1laurin/embedded-qa-portfolio/tree/main/projects/booth-logger">View Code →</a></p>
-  </div>
-
-  <div class="project">
-  <h2>📶 Embedded Protocol Decoder</h2>
-  <p>Reverse-engineers booth communication over TCP/IP using Wireshark and Python. Focuses on decoding MQTT/gRPC data structures for QA verification.</p>
-  <p><a href="https://github.com/1laurin/embedded-qa-portfolio/tree/main/projects/protocol-decoder">View Code →</a></p>
-  </div>
-
-  <div class="project">
-  <h2>🧰 HIL Simulation Environment</h2>
-  <p>A mock Hardware-In-the-Loop test system for simulating booth inputs and outputs. Includes state transitions, sensor emulation, and test scenario execution.</p>
-  <p><a href="https://github.com/1laurin/embedded-qa-portfolio/tree/main/projects/mock-booth-simulator">View Code →</a></p>
-  </div>
-
-
-  <footer>
-    Made by Laurin Brittain
-  </footer>
 </body>
 </html>
